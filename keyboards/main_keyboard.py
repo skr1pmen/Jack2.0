@@ -1,0 +1,27 @@
+from aiogram.types import (
+    ReplyKeyboardMarkup,
+    KeyboardButton,
+    WebAppInfo
+)
+
+
+def main(url):
+    return ReplyKeyboardMarkup(
+        keyboard=[
+            [
+                KeyboardButton(text="Сайт 🌐", web_app=WebAppInfo(url=url)),
+                KeyboardButton(text="Расписание 📅", ),
+            ],
+            [
+                KeyboardButton(text="Звонки 🔔"),
+                KeyboardButton(text="Помощь 📞"),
+            ],
+            [
+                KeyboardButton(text="Настройки ⚙"),
+            ],
+        ],
+        resize_keyboard=True,
+        one_time_keyboard=True,
+        input_field_placeholder="Выберите пункт...",
+        selective=True
+    )
